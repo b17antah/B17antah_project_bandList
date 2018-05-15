@@ -21,7 +21,7 @@ public class Bands {
 
     public String bandInfo() {
         String str=name;
-        str+=" was founded year ";
+        str+=" was formed year ";
         str+=Integer.toString(when);
         str+=" in ";
         str+=where;

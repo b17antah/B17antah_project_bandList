@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Bands des = (Bands) adapter.getItem(position);
+                Bands des = (Bands)adapter.getItem(position);
 
                 Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_LONG).show();
 
@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
+            adapter.clear();
+            new FetchData().execute();
             return true;
         }
 
@@ -158,13 +160,14 @@ public class MainActivity extends AppCompatActivity {
                 for (int each = 0; each < a.length(); each++) {
 
                     JSONObject getBands = a.getJSONObject(each);
-                    String getName = getBands.getString("Name");
-                    String getWhere = getBands.getString("Location");
-                    String getType = getBands.getString("Company");
-                    int getWhen = getBands.getInt("Cost");
+                    String getName = getBands.getString("name");
+                    String getWhere = getBands.getString("location");
+                    String getType = getBands.getString("company");
+                    int getWhen = getBands.getInt("cost");
 
                     Bands showBands = new Bands(getName, getWhere, getType, getWhen);
                     adapter.add(showBands);
+                    Log.d("getName", "Name: "+getName);
                 }
             } catch (JSONException e) {
                 Log.e("brom", "E:" + e.getMessage());
