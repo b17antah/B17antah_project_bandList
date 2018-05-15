@@ -1,5 +1,6 @@
 package com.example.b17antah.b17antah_project_bandlist;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -50,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                Intent intent = new Intent(getApplicationContext(), InformationForBand.class);
                 Bands des = (Bands)adapter.getItem(position);
 
+                /*
                 Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_LONG).show();
-
+                */
             }
         });
 

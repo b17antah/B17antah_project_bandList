@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">B17antah_project_bandList</string>
     <string name="action_about">About</string>
+    <string name="title_activity_information_for_band">InformationForBand</string>
 </resources>
