@@ -24,12 +24,30 @@
         android:id="@+id/include" />
 
     <TextView
-        android:id="@+id/informationtext_AboutTheApp"
+        android:id="@+id/informationtext_ATA_Header"
         android:layout_width="match_parent"
-        android:layout_height="507dp"
+        android:layout_height="43dp"
         android:layout_gravity="bottom|right"
-        android:text="Yello"
+        android:textSize="26sp"
+        android:textAlignment="center"
+        android:text=" Welcome to BandCheck!"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="top|left" />
+
+    <TextView
+        android:id="@+id/informationtext_ATA_Body"
+        android:layout_width="match_parent"
+        android:layout_height="415dp"
+        android:layout_gravity="bottom|right"
+        android:paddingLeft="5dp"
+        android:text="This app was made with the intention make it easier for metalfans to discover and recommend bands to other fans." />
+
+    <TextView
+        android:id="@+id/informationtext_ATA_Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:paddingLeft="5dp"
+        android:text="made with android studio 2.3.3" />
 
 </android.support.design.widget.CoordinatorLayout>
