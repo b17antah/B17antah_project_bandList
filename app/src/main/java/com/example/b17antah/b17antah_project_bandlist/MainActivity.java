@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(getApplicationContext(), InformationForBand.class);
+                /*Intent intent = new Intent(getApplicationContext(), InformationForBand.class); */
                 Bands des = (Bands)adapter.getItem(position);
 
-                /*
+
                 Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_LONG).show();
-                */
+
             }
         });
 
@@ -66,22 +66,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
-            adapter.clear();
-            new FetchData().execute();
+            Intent onwardsMySteed = new Intent(getApplicationContext(), AboutTheApp.class);
+            startActivity(onwardsMySteed);
             return true;
         }
 
@@ -91,50 +86,37 @@ public class MainActivity extends AppCompatActivity {
     private class FetchData extends AsyncTask<Void, Void, String> {
         @Override
         protected String doInBackground(Void... params) {
-            // These two variables need to be declared outside the try/catch
-            // so that they can be closed in the finally block.
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
 
-            // Will contain the raw JSON response as a Java string.
             String jsonStr = null;
 
             try {
-                // Construct the URL for the Internet service
                 URL url = new URL("http://wwwlab.iit.his.se/brom/kurser/mobilprog/dbservice/admin/getdataasjson.php?login=b17antah");
 
-                // Create the request to the PHP-service, and open the connection
                 urlConnection = (HttpURLConnection) url.openConnection();
                 urlConnection.setRequestMethod("GET");
                 urlConnection.connect();
 
-                // Read the input stream into a String
                 InputStream inputStream = urlConnection.getInputStream();
                 StringBuffer buffer = new StringBuffer();
                 if (inputStream == null) {
-                    // Nothing to do.
                     return null;
                 }
                 reader = new BufferedReader(new InputStreamReader(inputStream));
 
                 String line;
                 while ((line = reader.readLine()) != null) {
-                    // Since it's JSON, adding a newline isn't necessary (it won't affect parsing)
-                    // But it does make debugging a *lot* easier if you print out the completed
-                    // buffer for debugging.
                     buffer.append(line + "\n");
                 }
 
                 if (buffer.length() == 0) {
-                    // Stream was empty.  No point in parsing.
                     return null;
                 }
                 jsonStr = buffer.toString();
                 return jsonStr;
             } catch (IOException e) {
                 Log.e("PlaceholderFragment", "Error ", e);
-                // If the code didn't successfully get the weather data, there's no point in
-                // attempting to parse it.
                 return null;
             } finally {
                 if (urlConnection != null) {
@@ -153,11 +135,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String o) {
             super.onPostExecute(o);
-            Log.d("kot", "DataFetched:" + o);
 
             try {
-
-                // När vi har ett JSONObjekt kan vi hämta ut dess beståndsdelar
                 JSONArray a = new JSONArray(o);
 
                 for (int each = 0; each < a.length(); each++) {
@@ -170,17 +149,11 @@ public class MainActivity extends AppCompatActivity {
 
                     Bands showBands = new Bands(getName, getWhere, getType, getWhen);
                     adapter.add(showBands);
-                    Log.d("getName", "Name: "+getName);
                 }
             } catch (JSONException e) {
-                Log.e("brom", "E:" + e.getMessage());
+
 
             }
-            // This code executes after we have received our data. The String object o holds
-            // the un-parsed JSON string or is null if we had an IOException during the fetch.
-
-            // Implement a parsing code that loops through the entire JSON and creates objects
-            // of our newly created com.example.brom.listviewjsonapp.Mountain class.
         }
     }
 }

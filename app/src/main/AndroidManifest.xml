@@ -30,6 +30,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.b17antah.b17antah_project_bandlist.MainActivity" />
         </activity>
+        <activity
+            android:name=".AboutTheApp"
+            android:label="@string/title_activity_about_the_app"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.b17antah.b17antah_project_bandlist.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
