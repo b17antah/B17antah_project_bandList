@@ -43,7 +43,7 @@
         android:text="This app was made with the intention make it easier for metalfans to discover and recommend bands to other fans." />
 
     <TextView
-        android:id="@+id/informationtext_ATA_Bottom"
+        android:id="@+id/informationtext_ATA_Footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"

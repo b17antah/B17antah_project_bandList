@@ -26,6 +26,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,10 +52,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                /*Intent intent = new Intent(getApplicationContext(), InformationForBand.class); */
+                Intent intent = new Intent(getApplicationContext(), InformationForBand.class);
+
                 Bands des = (Bands)adapter.getItem(position);
-
-
+                intent.putExtra("infoB", des.bandInfo());
+                startActivity(intent);
                 Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_LONG).show();
 
             }
@@ -151,8 +153,6 @@ public class MainActivity extends AppCompatActivity {
                     adapter.add(showBands);
                 }
             } catch (JSONException e) {
-
-
             }
         }
     }

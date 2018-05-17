@@ -20,15 +20,16 @@ public class Bands {
     public String toString() { return name; }
 
     public String bandInfo() {
-        String str=name;
-        str+=" was formed year ";
-        str+=Integer.toString(when);
-        str+=" in ";
-        str+=where;
-        str+=" and is a ";
-        str+=type;
-        str+=" band. ";
-        return str;
+        String aboutTheBand="'";
+        aboutTheBand+=name;
+        aboutTheBand+="' was formed year ";
+        aboutTheBand+=Integer.toString(when);
+        aboutTheBand+=" in ";
+        aboutTheBand+=where;
+        aboutTheBand+=" and is a ";
+        aboutTheBand+=type;
+        aboutTheBand+=" band. ";
+        return aboutTheBand;
     }
 
     public void setWhen(int newWhen) { when=newWhen; }
