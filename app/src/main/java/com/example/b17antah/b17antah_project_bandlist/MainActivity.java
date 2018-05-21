@@ -58,8 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 Bands des = (Bands)adapter.getItem(position);
                 intent.putExtra("infoB", des.bandInfo());
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_SHORT).show();
-
+                for (int i=0; i < 2; i++) {
+                    Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_LONG).show();
+                }
             }
         });
 
