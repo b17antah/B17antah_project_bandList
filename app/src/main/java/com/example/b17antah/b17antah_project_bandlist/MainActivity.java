@@ -3,6 +3,7 @@ package com.example.b17antah.b17antah_project_bandlist;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 Bands des = (Bands)adapter.getItem(position);
                 intent.putExtra("infoB", des.bandInfo());
                 startActivity(intent);
-                Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), des.bandInfo(), Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -79,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_about) {
             Intent onwardsMySteed = new Intent(getApplicationContext(), AboutTheApp.class);
             startActivity(onwardsMySteed);
+            return true;
+        }
+
+        if (id == R.id.action_start) {
+            Intent getBack = new Intent(getApplicationContext(), Introduction.class);
+            startActivity(getBack);
             return true;
         }
 

@@ -8,5 +8,4 @@
     android:paddingRight="16dp"
     android:height="48dp"
     android:id="@+id/item_textview">
-
 </TextView>

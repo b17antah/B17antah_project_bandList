@@ -30,7 +30,7 @@
         android:layout_gravity="bottom|right"
         android:textSize="26sp"
         android:textAlignment="center"
-        android:text=" Welcome to BandCheck!"
+        android:text="Welcome to BandCheck!"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="top|left" />
 
@@ -49,5 +49,13 @@
         android:layout_gravity="bottom|right"
         android:paddingLeft="5dp"
         android:text="made with android studio 2.3.3" />
+
+    <TextView
+        android:id="@+id/informationtext_ATA_Body2"
+        android:layout_width="match_parent"
+        android:layout_height="337dp"
+        android:layout_gravity="bottom|right"
+        android:paddingLeft="5dp"
+        android:text="For more information you may contact us at: b17antah@student.his.se" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.b17antah.b17antah_project_bandlist.MainActivity">
     <item
+        android:id="@+id/action_start"
+        android:orderInCategory="100"
+        android:title="Start"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_about"
         android:orderInCategory="100"
         android:title="About"

@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">BandCheck</string>
-    <string name="action_about">About</string>
-    <string name="title_activity_information_for_band">Band information</string>
-    <string name="title_activity_about_the_app">About the app</string>
+    <string name="app_name">BandCheck - List</string>
+    <string name="action_about">BandCheck - About</string>
+    <string name="action_start">BandCheck - Start</string>
+    <string name="title_activity_information_for_band">BandCheck - Information</string>
+    <string name="title_activity_about_the_app">BandCheck - About</string>
+    <string name="title_activity_introduction">BandCheck</string>
 </resources>
