@@ -32,5 +32,9 @@ public class Bands {
         return aboutTheBand;
     }
 
+    public String whereIs() {
+        return type;
+    }
+
     public void setWhen(int newWhen) { when=newWhen; }
 }
